@@ -1,0 +1,234 @@
+.hero {
+  position: relative;
+  background: var(--dark);
+  color: #fff;
+  padding-block: 48px 56px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(2px);
+}
+.hero::before {
+  width: min(58vw, 460px);
+  aspect-ratio: 1;
+  left: -22%;
+  top: 18%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(181, 203, 184, 0.95) 0%,
+    rgba(143, 171, 149, 0.55) 35%,
+    rgba(26, 26, 26, 0) 72%
+  );
+}
+.hero::after {
+  width: min(70vw, 560px);
+  aspect-ratio: 1;
+  right: -28%;
+  top: 44%;
+  background: radial-gradient(
+    circle at 55% 45%,
+    rgba(76, 180, 190, 0.9) 0%,
+    rgba(48, 110, 180, 0.55) 40%,
+    rgba(26, 26, 26, 0) 72%
+  );
+}
+
+.hero__inner {
+  position: relative;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.hero__badge b {
+  color: var(--sage);
+  font-weight: 900;
+}
+.dot-live {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #7ee08a;
+  box-shadow: 0 0 0 0 rgba(126, 224, 138, 0.6);
+  animation: pulse 2.2s infinite;
+}
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 9px rgba(126, 224, 138, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(126, 224, 138, 0);
+  }
+}
+
+.hero__title {
+  margin-bottom: 26px;
+}
+.hero__accent {
+  color: var(--sage);
+  position: relative;
+  display: inline-block;
+}
+.hero__accent::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 3px;
+  background: var(--sage);
+  opacity: 0.4;
+}
+
+.hero__text {
+  max-width: 52ch;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 28px;
+}
+
+.hero__actions {
+  display: grid;
+  gap: 12px;
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-dark);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.hero__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero__meta svg {
+  width: 16px;
+  height: 16px;
+  color: var(--sage);
+  flex: none;
+}
+
+/* Hero visual */
+.hero__visual {
+  position: relative;
+  margin-top: 40px;
+}
+.hero__image {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--sh-lg);
+}
+.hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__card {
+  position: absolute;
+  background: #fff;
+  color: var(--ink);
+  padding: 18px 22px;
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh);
+  min-width: 160px;
+}
+.hero__card-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.hero__card-value {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.hero__card-value small {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: 2px;
+}
+.hero__card-text {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.hero__card--price {
+  top: 24px;
+  left: -20px;
+}
+.hero__card--rating {
+  bottom: 24px;
+  right: -20px;
+}
+.hero__card-stars {
+  color: #f2a83b;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: 34px;
+  background: var(--line-dark);
+  border: 1px solid var(--line-dark);
+}
+.stat {
+  background: var(--dark);
+  padding: 20px 14px;
+  text-align: left;
+}
+.stat__value {
+  font-size: clamp(22px, 6vw, 30px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+.stat__value sup {
+  color: var(--sage);
+  font-size: 0.6em;
+}
+.stat__label {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}

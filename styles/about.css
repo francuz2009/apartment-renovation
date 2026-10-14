@@ -1,0 +1,60 @@
+.about {
+  display: grid;
+  gap: 28px;
+}
+
+.about__media {
+  position: relative;
+  aspect-ratio: 5/4;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.about__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about__badge {
+  position: absolute;
+  left: 24px;
+  bottom: -24px;
+  background: var(--sage);
+  color: var(--ink);
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+  min-width: 180px;
+  box-shadow: var(--sh);
+}
+.about__badge svg {
+  width: 44px;
+  height: 44px;
+}
+.about__badge .num {
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-top: 6px;
+}
+.about__badge .txt {
+  font-size: 12px;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: rgba(17, 17, 17, 0.75);
+}
+
+.about__content h2 {
+  margin-bottom: 20px;
+}
+.about__content p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}

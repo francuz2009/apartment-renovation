@@ -1,0 +1,87 @@
+.reviews {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-inline: calc(var(--gutter) * -1);
+  padding: 4px var(--gutter) 10px;
+}
+.reviews::-webkit-scrollbar {
+  display: none;
+}
+
+.review {
+  flex: 0 0 86%;
+  scroll-snap-align: start;
+  background: #fff;
+  color: var(--ink);
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: var(--r);
+}
+.review__stars {
+  display: flex;
+  gap: 3px;
+  color: #f2a83b;
+}
+.review__stars svg {
+  width: 14px;
+  height: 14px;
+}
+.review__text {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  flex: 1;
+}
+.review__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.review__avatar {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  background: var(--sage-soft);
+  color: var(--ink);
+  font-weight: 900;
+  font-size: 15px;
+  border-radius: 50%;
+}
+.review__name {
+  font-size: 14px;
+  font-weight: 700;
+}
+.review__meta {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.reviews-nav {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+.reviews-nav button {
+  width: 8px;
+  height: 8px;
+  background: rgba(17, 17, 17, 0.2);
+  border-radius: 50%;
+  transition:
+    width var(--dur) var(--ease),
+    background-color var(--dur) var(--ease);
+}
+.reviews-nav button[aria-current='true'] {
+  width: 22px;
+  background: var(--sage-3);
+}

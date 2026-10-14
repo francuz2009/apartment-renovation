@@ -1,0 +1,92 @@
+h1,
+.h1 {
+  font-size: clamp(30px, 7vw, 56px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+h2,
+.h2 {
+  font-size: clamp(22px, 5.6vw, 40px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+h3,
+.h3 {
+  font-size: clamp(17px, 4.4vw, 20px);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+.lead {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.section--dark .lead,
+.section--dark p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.heading {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+}
+.heading::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--sage);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 14px;
+}
+.section--light .eyebrow {
+  color: var(--sage-3);
+}
+.section--mint .eyebrow {
+  color: var(--sage-3);
+}
+
+.sec-head {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+.sec-head .heading::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.sec-title {
+  margin-bottom: 18px;
+}
+.sec-lead {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 56ch;
+  margin: 0 auto;
+}
+.section--dark .sec-lead {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.accent {
+  color: var(--sage-3);
+}

@@ -1,0 +1,23 @@
+.consent {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  margin-top: 18px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.consent input {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  margin-top: 1px;
+  accent-color: var(--sage-3);
+  cursor: pointer;
+}
+.consent a {
+  color: var(--sage-3);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

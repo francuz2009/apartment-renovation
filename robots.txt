@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /api/config.php
+Disallow: /api/.rate/
+Disallow: /api/leads.log
+
+Sitemap: https://newoutline.ru/sitemap.xml
+Host: https://newoutline.ru
