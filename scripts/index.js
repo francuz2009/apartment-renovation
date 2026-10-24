@@ -103,26 +103,29 @@ document.addEventListener('keydown', (e) => {
   }
 })
 
-/* ---------- Reveal ---------- */
-const revealEls = $$('[data-reveal]')
-if (reduced || !('IntersectionObserver' in window)) {
-  revealEls.forEach((el) => el.classList.add('is-visible'))
-} else {
-  const io = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add('is-visible')
-          obs.unobserve(e.target)
-        }
-      })
-    },
-    { rootMargin: '0px 0px -6% 0px', threshold: 0.1 }
-  )
-  revealEls.forEach((el, i) => {
-    el.style.transitionDelay = `${Math.min(i % 4, 3) * 70}ms`
-    io.observe(el)
-  })
+const supportsScrollTimeline = CSS.supports('animation-timeline: view()');
+
+if (!supportsScrollTimeline) {
+  const revealEls = $$('[data-reveal]');
+  if (reduced || !('IntersectionObserver' in window)) {
+    revealEls.forEach((el) => el.classList.add('is-visible'));
+  } else {
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            obs.unobserve(e.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -6% 0px', threshold: 0.1 }
+    );
+    revealEls.forEach((el, i) => {
+      el.style.transitionDelay = `${Math.min(i % 4, 3) * 70}ms`;
+      io.observe(el);
+    });
+  }
 }
 
 /* ---------- Counters ---------- */

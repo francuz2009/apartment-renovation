@@ -1,0 +1,99 @@
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ink);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: progress-grow linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes progress-grow {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  .scroll-progress {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress {
+    display: none !important;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .hero::before {
+    animation: hero-orb-1 linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100vh;
+  }
+  .hero::after {
+    animation: hero-orb-2 linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100vh;
+  }
+  @keyframes hero-orb-1 {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-14%, 24%, 0);
+    }
+  }
+  @keyframes hero-orb-2 {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(12%, 28%, 0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero::after {
+    animation: none !important;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .hero__image img {
+    animation: hero-img-parallax linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100vh;
+    will-change: transform;
+  }
+  @keyframes hero-img-parallax {
+    from {
+      transform: scale(1.1) translateY(0);
+    }
+    to {
+      transform: scale(1.1) translateY(-4%);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__image img {
+    animation: none !important;
+    transform: none !important;
+  }
+}
