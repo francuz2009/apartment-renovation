@@ -63,9 +63,9 @@
     <meta name="twitter:image" content="https://newoutline.ru/og-image.jpg" />
 
     <!-- SEO: Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <!-- SEO: Preconnect -->
@@ -646,11 +646,9 @@
             </h1>
 
             <p class="hero__text">
-              Услуга «ремонт квартиры под ключ» идеально подойдёт тем, кто не
-              хочет тратить своё время, силы и нервы на подготовку и проведение
-              строительных и отделочных работ. Специалисты нашей компании
-              выполнят все необходимые мероприятия и реализуют качественный
-              ремонт по вашим пожеланиям точно в срок.
+              Берём на себя всё: замер, смета, закупка материалов, работы и
+              финальная уборка. Вы заезжаете в готовую квартиру в согласованный
+              срок — цена зафиксирована в договоре и не меняется.
             </p>
 
             <div class="hero__actions">
@@ -680,9 +678,11 @@
           <div class="hero__visual">
             <div class="hero__image">
               <img
-                src="hero.jpg"
+                src="/images/hero.jpg"
                 alt="Современный интерьер квартиры после ремонта от компании Новый Контур в Москве"
                 loading="eager"
+                fetchpriority="high"
+                decoding="async"
                 width="800"
                 height="1000"
               />
@@ -705,19 +705,19 @@
         <div class="container">
           <div class="stats" role="list" aria-label="Статистика компании">
             <div class="stat" role="listitem">
-              <div class="stat__value" data-count="12">0</div>
+              <div class="stat__value" data-count="12">12</div>
               <div class="stat__label">лет на рынке</div>
             </div>
             <div class="stat" role="listitem">
-              <div class="stat__value" data-count="1840">0<sup>+</sup></div>
+              <div class="stat__value" data-count="1840">1840<sup>+</sup></div>
               <div class="stat__label">объектов сдано</div>
             </div>
             <div class="stat" role="listitem">
-              <div class="stat__value" data-count="100">0<sup>%</sup></div>
+              <div class="stat__value" data-count="100">100<sup>%</sup></div>
               <div class="stat__label">довольных клиентов</div>
             </div>
             <div class="stat" role="listitem">
-              <div class="stat__value" data-count="2">0</div>
+              <div class="stat__value" data-count="2">2</div>
               <div class="stat__label">года гарантии</div>
             </div>
           </div>
@@ -900,9 +900,10 @@
           <div class="why">
             <div class="why__media" data-reveal>
               <img
-                src="about.jpg"
+                src=""
                 alt="Процесс ремонта квартиры бригадой компании Новый Контур"
                 loading="lazy"
+                decoding="async"
                 width="800"
                 height="1000"
               />
@@ -987,9 +988,10 @@
             <article class="project" data-reveal>
               <div class="project__media">
                 <img
-                  src="project-1.jpg"
+                  src="/images/project-1.jpg"
                   alt="Дизайн-проект квартиры в ЖК Квартал на Никулинской — современный интерьер"
                   loading="lazy"
+                  decoding="async"
                   width="900"
                   height="675"
                 />
@@ -1008,9 +1010,10 @@
             <article class="project" data-reveal>
               <div class="project__media">
                 <img
-                  src="project-2.jpg"
+                  src="/images/project-2.jpg"
                   alt="Квартира в стиле лофт в центре Москвы — интерьер с кирпичной стеной"
                   loading="lazy"
+                  decoding="async"
                   width="900"
                   height="675"
                 />
@@ -1029,9 +1032,10 @@
             <article class="project" data-reveal>
               <div class="project__media">
                 <img
-                  src="project-3.jpg"
+                  src="/images/project-3.jpg"
                   alt="Интерьер квартиры на Ульяновской улице — классический стиль"
                   loading="lazy"
+                  decoding="async"
                   width="900"
                   height="675"
                 />
@@ -1349,9 +1353,10 @@
           <div class="about">
             <div class="about__media" data-reveal>
               <img
-                src="company.jpg"
+                src=""
                 alt="Команда специалистов компании Новый Контур — ремонт квартир в Москве"
                 loading="lazy"
+                decoding="async"
                 width="1000"
                 height="800"
               />
@@ -1614,6 +1619,18 @@
               Записаться на замер
               <svg class="btn__icon"><use href="#i-arrow"></use></svg>
             </button>
+            <p
+              class="form-hint"
+              style="
+                margin-top: 14px;
+                text-align: center;
+                font-size: 13px;
+                color: var(--text-muted);
+              "
+            >
+              Перезвоним в течение 15 минут. Без спама, навязчивых продаж и
+              обязательств — замер и смета бесплатны.
+            </p>
           </form>
         </div>
       </section>
